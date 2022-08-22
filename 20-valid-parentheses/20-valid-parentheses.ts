@@ -7,11 +7,12 @@ function isValid(s: string): boolean {
     }
     
     for(let i = 0; i < s.length; i++) {
-        if(parenthesePair[s[i]]) {
-            stack.push(s[i])
+        let char = s[i]
+        if(parenthesePair[char]) {
+            stack.push(char)
         } else {
             const lastEl = stack.pop()
-            if(s[i] !== parenthesePair[lastEl]) {
+            if(char !== parenthesePair[lastEl]) {
                 return false
             }
         }
