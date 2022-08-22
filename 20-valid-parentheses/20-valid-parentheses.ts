@@ -11,8 +11,7 @@ function isValid(s: string): boolean {
         if(parenthesePair[char]) {
             stack.push(char)
         } else {
-            const lastEl = stack.pop()
-            if(char !== parenthesePair[lastEl]) {
+            if(char !== parenthesePair[stack.pop()]) {
                 return false
             }
         }
