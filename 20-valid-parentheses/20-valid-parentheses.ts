@@ -1,5 +1,4 @@
 function isValid(s: string): boolean {    
-    const stringArr = s.split('');
     const stack = [];    
     const parenthesePair = {
         '(' : ')',
@@ -7,12 +6,12 @@ function isValid(s: string): boolean {
         '{' : '}'
     }
     
-    for(let char of stringArr) {
-        if(parenthesePair[char]) {
-            stack.push(char)
+    for(let i = 0; i < s.length; i++) {
+        if(parenthesePair[s[i]]) {
+            stack.push(s[i])
         } else {
             const lastEl = stack.pop()
-            if(char !== parenthesePair[lastEl]) {
+            if(s[i] !== parenthesePair[lastEl]) {
                 return false
             }
         }
