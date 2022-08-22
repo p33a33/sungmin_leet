@@ -1,7 +1,6 @@
 function isValid(s: string): boolean {    
     const stringArr = s.split('');
     const stack = [];    
-    const startParentheses = ['(', '[', '{'];
     const parenthesePair = {
         '(' : ')',
         '[' : ']',
@@ -9,7 +8,7 @@ function isValid(s: string): boolean {
     }
     
     for(let char of stringArr) {
-        if(startParentheses.includes(char)) {
+        if(parenthesePair[char]) {
             stack.push(char)
         } else {
             const lastEl = stack.pop()
