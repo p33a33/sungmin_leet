@@ -4,7 +4,6 @@ function strStr(haystack: string, needle: string): number {
     let window = haystack.substring(0, needleLength)
 
     for(let i = 0; i < hayLength - needleLength + 1; i++) {
-        console.log(window)
         if(window === needle) {
             return i
         }
