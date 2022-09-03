@@ -12,8 +12,6 @@ function plusOne(digits: number[]): number[] {
             }
         }
     }
-    
-    console.log(digits)
-    
+
     return digits;
 };
